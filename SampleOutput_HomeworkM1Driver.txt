@@ -1,0 +1,54 @@
+******************************Testing toString
+Receipt a1x1m1m1	Store: Foods R Us (Smallerville)	10 items 	Total:$99.47
+Receipt vbevb0vv	Store: Foods R Us (Smallerville)	1 item  	Total:$0.99
+Receipt h2g2b2gb	Store: Foods R Us (Unioner City)	21 items 	Total:$219.42
+Receipt avvz0avv	Store: ElectroFun (Unioner City)	1 item  	Total:$599.99
+Receipt bxxbxx3x	Store: The Bookworm (Eastchester)	50 items 	Total:$525.25	Digital copy sent to: sir.reads.a.lot@books.com
+Receipt uuu3fqqq	Store: The Bookworm (Eastchester)	1 item  	Total:$4.87	Digital copy sent to: mark.darcy@gmail.abc
+Receipt xxx2m2xx	Store: ElectroFun (Unioner City)	2 items 	Total:$139.21	Digital copy sent to: dr.frankenstein@monster.com
+Receipt ybbby99y	Store: Foods R Us (Smallerville)	18 items 	Total:$78.41	Digital copy sent to: t@iced.com
+
+
+******************************Testing use of Store object
+Should show "Unioner City" in the output:
+	Receipt h2g2b2gb	Store: Foods R Us (Unioner City)	21 items 	Total:$219.42
+	Receipt avvz0avv	Store: ElectroFun (Unioner City)	1 item  	Total:$599.99
+	Receipt xxx2m2xx	Store: ElectroFun (Unioner City)	2 items 	Total:$139.21	Digital copy sent to: dr.frankenstein@monster.com
+Now should show "Union City" in the output:
+	Receipt h2g2b2gb	Store: Foods R Us (Union City)	21 items 	Total:$219.42
+	Receipt avvz0avv	Store: ElectroFun (Union City)	1 item  	Total:$599.99
+	Receipt xxx2m2xx	Store: ElectroFun (Union City)	2 items 	Total:$139.21	Digital copy sent to: dr.frankenstein@monster.com
+
+
+******************************Testing equals method
+All contains tests passed.
+
+
+******************************Testing Receipt Criteria
+Expected=true	Actual=true	ID=a1x1m1m1  firstChar=x  secondChar=m  timesAfter=2
+Expected=true	Actual=true	ID=vbevb0vv  firstChar=e  secondChar=v  timesAfter=3
+Expected=true	Actual=true	ID=h2g2b2gb  firstChar=g  secondChar=b  timesAfter=2
+Expected=true	Actual=true	ID=h2g2b2gb  firstChar=g  secondChar=h  timesAfter=0
+Expected=true	Actual=true	ID=bxxbxx3x  firstChar=b  secondChar=z  timesAfter=0
+Expected=false	Actual=false	ID=avvz0avv  firstChar=z  secondChar=a  timesAfter=2
+Expected=false	Actual=false	ID=uuu3fqqq  firstChar=f  secondChar=q  timesAfter=2
+Expected=false	Actual=false	ID=xxx2m2xx  firstChar=k  secondChar=m  timesAfter=1
+Expected=false	Actual=false	ID=ybbby99y  firstChar=b  secondChar=b  timesAfter=3
+
+
+******************************Testing e-Mail Validator (Extra Credit)
+Expected=true	Actual=true	email=sir.reads.a.lot@books.com
+Expected=true	Actual=true	email=mark.darcy@gmail.abc
+Expected=true	Actual=true	email=dr.frankenstein@monster.com
+Expected=true	Actual=true	email=t@iced.com
+Expected=true	Actual=true	email=ina@hurry.edu
+Expected=true	Actual=true	email=morris?@better.gov
+Expected=false	Actual=false	email=@abc.xyz
+Expected=false	Actual=false	email=abc.com
+Expected=false	Actual=false	email=j@com
+Expected=false	Actual=false	email=jessica@com
+Expected=false	Actual=false	email=j.m@gmail.comm
+Expected=false	Actual=false	email=j.m@gmail.hi
+Expected=false	Actual=false	email=j.m@gmail.z
+Expected=false	Actual=false	email=abcdef
+Expected=false	Actual=false	email=!@abc.def

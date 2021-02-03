@@ -70,9 +70,9 @@
 
         if (income > 100000) {
             return true;
-        } else if ((income >= 50000) && ((serviceYears >= 2) || coSigner)) {
+        } else if ((income >= 50000) && (serviceYears >= 2)) {
             return true;
-        } else if ((income < 50000) && coSigner) {
+        } else if (coSigner) {
             return true;
         } else {
             return false;
