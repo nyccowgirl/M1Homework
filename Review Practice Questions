@@ -1,0 +1,80 @@
+1.  x = 1
+    a.  (true) && (3 > 4)           => false
+    b.  !(x < 0) && (x > -2)        => true
+    c.  (x > 0) || (x < 0)          => true
+    d.  (x != 0) && (x >= 1)        => true
+    e.  (x <= 2) || (x % 2 == 0)    => true
+    f.  (0 < x < 5)                 => (x > 0) && (x < 5)   => true
+
+2.  if(x > 2) {
+       if(y > 2) {
+          System.out.println(x+y);
+       }
+    } else {
+       System.out.println(x);
+    }
+
+    if(x > 1) {
+       System.out.println("a");
+    } else if(x > 2) {
+       System.out.println("b");
+    }
+
+    a.  x = 3, y = 2        => a
+    b.  x = 3, y = 4        => 7, a
+    c.  x = 2, y = 2        => 2, a
+
+3.  if(score >= 60)  {
+       grade = 'D';
+    } else if(score >= 70) {
+       grade = 'C';
+    } else if(score >= 80)  {
+       grade = 'B';
+    } else if(score >= 90) {
+       grade = 'A';
+    } else {
+       grade = 'F';
+    }
+
+    => any score 60 or over will result in grade of D, or F otherwise.
+
+    Conditional A:
+
+    if(age < 16) {
+       System.out.println("you cannot drive");
+    } else {
+       System.out.println("you can drive!");
+    }
+
+    Conditional B:
+
+    if(age < 16) {
+       System.out.println("you cannot drive");
+    } else if(age >= 16) {
+       System.out.println("you can drive!");
+    }
+
+    Conditional C:
+
+    if(age < 16) {
+       System.out.println("you cannot drive");
+    }
+    if(age >= 16) {
+       System.out.println("you can drive!");
+    }
+
+    => all will print correct result with Conditional A being best option since if the condition is not met, there is
+    only one default response possible
+
+4.  public static boolean approveLoan(int income, boolean coSigner, int serviceYears) {
+
+        if (income > 100000) {
+            return true;
+        } else if ((income >= 50000) && ((serviceYears >= 2) || coSigner)) {
+            return true;
+        } else if ((income < 50000) && coSigner) {
+            return true;
+        } else {
+            return false;
+        }
+    }
