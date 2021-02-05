@@ -66,11 +66,15 @@
     => all will print correct result with Conditional A being best option since if the condition is not met, there is
     only one default response possible
 
-4.  public static boolean approveLoan(int income, boolean coSigner, int serviceYears) {
+4.  public static final int HIGH_INCOME = 100000;
+    public static final int LOW_INCOME = 50000;
+    public static final int MIN_YEARS = 2;
 
-        if (income > 100000) {
+    public static boolean approveLoan(int income, boolean coSigner, int serviceYears) {
+
+        if (income > HIGH_INCOME) {
             return true;
-        } else if ((income >= 50000) && (serviceYears >= 2)) {
+        } else if ((income >= LOW_INCOME) && (serviceYears >= MIN_YEARS)) {
             return true;
         } else if (coSigner) {
             return true;
@@ -78,3 +82,142 @@
             return false;
         }
     }
+
+5.  public static boolean isLeap(int year) {
+        return ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)));
+    }
+
+6.  public static final int HIGH_INCOME = 30000;
+    public static final int LOW_INCOME = 15000;
+    public static final double HIGH_TAX = 0.1;
+    public static final double LOW_TAX = 0.05;
+
+    public static double calculateTax(int income) {
+        double tax = 0;
+
+        if (income > HIGH_INCOME) {
+            tax += (income - HIGH_INCOME) * HIGH_TAX;
+            tax += (HIGH_INCOME - LOW_INCOME) * LOW_TAX;
+        } else if (income > LOW_INCOME) {
+            tax += (income - LOW_INCOME) * LOW_TAX;
+        }
+
+        return tax;
+    }
+
+7.  int x = 1, y = 0;
+    while(y < 10) {
+       x += y;
+       y += 2;
+    }
+
+    => x = 21
+
+8.  int x = 1;
+    for(int i=5; i>0; i--) {
+       x *= i;
+    }
+
+    => x = 120; i = 0
+
+9.  for(int i=3; i>=0; i--) {
+       for(int j=i; j>=0; j--) {
+          System.out.print(i+""+j+" ");
+       }
+       System.out.println();
+    }
+
+   => final output:
+   33 32 31 30
+   22 21 20
+   11 10
+   00
+
+10. public static int timesCutinHalf(int number) {
+        int times = 0;
+
+        while (number > 0) {
+            number = number / 2;
+            times++;
+        }
+
+        return times;
+    }
+
+11. public static int sumIntegers(int low, int high) {
+        int sum = 0;
+
+        for (int i = low; i <= high; i++) {
+            sum += i;
+        }
+
+        return sum;
+    }
+
+12. public static void displayDigitInfo(int number) {
+        int even, odd, zero, digit;
+
+        even = odd = zero = 0;
+
+        do {
+            digit = number % 10;
+            number = number / 10;
+
+            if (digit == 0) {
+                zero++;
+            } else if (digit % 2 == 0) {
+                even++;
+            } else {
+                odd++;
+            }
+
+        } while (Math.abs(number) > 0);
+
+        System.out.println("total zeros: " + zero);
+        System.out.println("total even numbers: " + even);
+        System.out.println("total odd numbers: " + odd);
+    }
+
+13. public static void displaySquare(int size) {
+        for (int i = 0; i < size; i++) {
+           for (int j = 0; j < size; j++) {
+               System.out.print("X");
+           }
+        System.out.println();
+        }
+    }
+
+14. 4
+    [0, 0, 0]
+    hello
+    (0, 0)
+
+    4
+    [1, 0, 0]
+    hello
+    (1, 0)
+
+    4
+    [1, 0, 0]
+    hello
+    (1, 0)
+
+15. see Computer.java
+
+16. see Computer.java
+
+17. see Driver.java
+
+18. see Author.java and Book.java
+
+19. see UndergradStudent.java
+
+20. see Driver.java
+
+21. Null is nothing. Null can be used to determine if a variable is null before invoking a method; otherwise, code
+    will crash.
+
+22. Variables - camelCase, descriptive, no underscores
+    Methods - camelCase, descriptive, no underscores, verb/action
+    Classes - UpperCamelCase, descriptive, no underscores, noun (single)
+    Constants - ALL_CAPS, descriptive, underscores
