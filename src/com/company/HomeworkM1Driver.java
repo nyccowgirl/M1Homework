@@ -56,13 +56,13 @@ public class HomeworkM1Driver {
         // parameter4: the receipt whose id is tested
         // parameter 5: is the expected result (true if the receipt meets the criteria, false otherwise)
         // parameter 6: a description of the test
-        testReceiptCriteria('x', 'm', 2, receipt1, true, "exactly 2 m's (firstChar) after x (secondChar)");
+        testReceiptCriteria('x', 'm', 2, receipt1, true, "exactly 2 m's (secondChar) after x (firstChar)");
         testReceiptCriteria('e', 'v', 3, receipt2, true, "exactly 3 v's (secondChar) after e (firstChar); also 1 extra v before e- that doesn't affect the criteria");
         testReceiptCriteria('g', 'b', 2, receipt3, true, "exactly 2 b's (secondChar) after the first g (firstChar); also a second g- that doesn't affect the criteria");
         testReceiptCriteria('g', 'h', 0, receipt3, true, "exactly 0 h's (secondChar) after the first g (firstChar); also an h before the g- that doesn't affect the criteria");
         testReceiptCriteria('b', 'z', 0, digitalReceipt1, true, "exactly 0 z's (secondChar) after the first b (firstChar)");
 
-        testReceiptCriteria('z', 'a', 2, receipt4, false, "only 1 a (firstChar) after the z- the other a comes before the z");
+        testReceiptCriteria('z', 'a', 2, receipt4, false, "only 1 a (secondChar) after the z (firstChar)- the other a comes before the z");
         testReceiptCriteria('f', 'q', 2, digitalReceipt2, false, "3 q's (secondChar) after the f (firstChar) instead of 2");
         testReceiptCriteria('k', 'm', 1, digitalReceipt3, false, "no k (firstChar)");
         testReceiptCriteria('b', 'b', 3, digitalReceipt4, false, "the first b is the firstChar; there are then only 2 *other b's* (that are the second char) after that instead of 3");
